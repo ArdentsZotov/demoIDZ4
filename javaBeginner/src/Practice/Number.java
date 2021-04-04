@@ -30,6 +30,7 @@ public class Number {
 Если 3 предыдущих условия верны, выведите данную строку, преобразованную к верхнему регистру.
 Замените все символы ‘a’ на ‘о’ и введите подстроку “Jovo” на экран  (используйте substring())
 */
+/*
 import java.util.Scanner;
 public class Number {
     public static void main(String[] args) {
@@ -60,3 +61,90 @@ public class Number {
         System.out.println(Result2.substring(7,11));
     }
 }
+*/
+
+/*
+Задача №13_ Работа с данными
+Напишите программу, где пользователь должен ввести строку из слов,
+разделенных пробелами. Например: “I love java 8 Я люблю java 14 core1”.
+Выполните следующие действия:
+Выведите слова, состоящие только из латиницы.
+Выведите количество этих слов
+*/
+
+/*
+import java.util.Scanner;
+public class Number {
+    public static void main(String[] args) {
+
+        // Принимаем на вход строку:
+        Scanner in = new Scanner(System.in);
+        System.out.println("Напишите в консоли фразу на английском и её перевод");
+        String myStroke = in.nextLine();
+        String engStroke = new String();
+
+        // Способ 1. Выводим латинские слова с помощью массива
+        // Объявляем массив:
+        char myChar [];
+
+        //записывает в массив знаки unicode из введенной строки:
+        myChar = myStroke.toCharArray();
+
+        // Перебираем элементы массива:
+        for (int i = 0; i < myChar.length; i++) {
+            if (myChar[i] < 254) engStroke += myChar[i];
+        }
+
+        // Выводим слова, состоящие только из латиницы:
+            System.out.println(engStroke);
+
+        // Способ 2. Выводим латинские слова с помощью replaceAll
+        // Уберем кириллицу из фразы:
+            engStroke = myStroke.replaceAll("[а-яА-Я\\d]", "");
+
+        // Выводим слова, состоящие только из латиницы:
+            System.out.println(engStroke);
+
+        // Считаем количество слов в строке:
+        String quantityWords [] = engStroke.split("  ");
+        System.out.println("Количество слов в строке: " + quantityWords.length);
+        }
+    }
+*/
+
+/*
+Задача №14_ Работа с данными
+Напишите программу, заполняющую массив из 15 элементов рандомными значениями
+в диапазоне от -20 до 20.
+Далее:
+Выведите максимальный и минимальный элемент массива.
+Из максимального и минимального значения выведите наибольшее по модулю.
+*/
+/*
+import java.util.Random;
+public class Number {
+    public static void main(String[] args) {
+        int[] myArray = new int[15];
+        // Объявляем объект random:
+        Random random = new Random();
+        // Перебираем элементы массива:
+        for (int i = 0; i < myArray.length; i++) {
+            // Указываем диапазон рандомных чисел для массива:
+            myArray[i] = random.nextInt(41) - 20;
+            System.out.print(myArray[i] + ";");
+            }
+        // Выводим максимальный и минимальный элемент массива
+        int max = myArray[0];
+        int min = myArray[0];
+        for (int i = 1; i < myArray.length; i++) {
+            max = Math.max(max, myArray[i]);
+            min = Math.min(min, myArray[i]);
+            }
+        System.out.println("\nМаксимальный элемент массива = " + max);
+        System.out.println("Минимальный элемент массива = " + min);
+        // Выводим наибольшее по модулю:
+        int maxModule = Math.max(Math.abs(max), Math.abs(min));
+        System.out.println("Наибольшее по модулю число = " + maxModule);
+    }
+}
+*/
