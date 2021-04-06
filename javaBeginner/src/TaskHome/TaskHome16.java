@@ -26,48 +26,46 @@ public class TaskHome16 {
         String eq = in.nextLine();
         System.out.println("Ввод: " + eq);
         // Проверяем длину вводимой строки:
-        if (eq.length() <= 5 & eq.charAt(3) == '=') {
+        if (eq.length() <= 5 && eq.charAt(3) == '=') {
             char ch1 = eq.charAt(0);
             char ch2 = eq.charAt(1);
             char ch3 = eq.charAt(2);
-            char ch4 = eq.charAt(3);
             char ch5 = eq.charAt(4);
-            // Разрешаем ввод русской и латинский 'x' в условии:
-            if (ch1 == 'x' | ch1 == 'х' & ch2 == '+'){
+
+            if (ch1 == 'x' | ch1 == 'х'){ // Разрешаем ввод русской и латинский 'x' в условии:
                 int c5 = Character.getNumericValue(ch5);
                 int c3 = Character.getNumericValue(ch3);
-                int x = c5 - c3;
-                System.out.println("Вывод: " + x);
+                if (ch2 == '+') { // Проверяем + или -
+                    int r1 = c5 - c3;
+                    System.out.println("Вывод: " + r1);
+                }
+                else
+                if (ch2 == '-') {
+                    int r2 = c5 + c3;
+                    System.out.println("Вывод: " + r2);
+                }
             }
-            else if (ch1 == 'x' | ch1 == 'х' & ch2 == '-') {
-                int c5 = Character.getNumericValue(ch5);
-                int c3 = Character.getNumericValue(ch3);
-                int x = c5 + c3;
-                System.out.println("Вывод: " + x);
-            }
-            else if (ch3 == 'x' | ch3 == 'х' & ch2 == '+'){
-                int c5 = Character.getNumericValue(ch5);
-                int c1 = Character.getNumericValue(ch1);
-                int x = c5 - c1;
-                System.out.println("Вывод: " + x);
-            }
-            else if (ch3 == 'x' | ch3 == 'х' & ch2 == '-'){
+            if (ch3 == 'x' | ch3 == 'х') {
                 int c5 = Character.getNumericValue(ch5);
                 int c1 = Character.getNumericValue(ch1);
-                int x = c1 - c5;
-                System.out.println("Вывод: " + x);
+                if (ch2 == '+') {
+                    int r3 = c5 - c1;
+                    System.out.println("Вывод: " + r3);
+                } else if (ch2 == '-') {
+                    int r4 = c1 - c5;
+                    System.out.println("Вывод: " + r4);
+                }
             }
-            else if (ch5 == 'x' | ch5 == 'х' & ch2 == '+'){
+            if (ch5 == 'x' | ch5 == 'х') {
                 int c3 = Character.getNumericValue(ch3);
                 int c1 = Character.getNumericValue(ch1);
-                int x = c3 + c1;
-                System.out.println("Вывод: " + x);
-            }
-            else if (ch5 == 'x' | ch5 == 'х' & ch2 == '-') {
-                int c1 = Character.getNumericValue(ch1);
-                int c3 = Character.getNumericValue(ch3);
-                int x = c1 - c3;
-                System.out.println("Вывод: " + x);
+                if (ch2 == '+') {
+                    int r5 = c3 + c1;
+                    System.out.println("Вывод: " + r5);
+                } else if (ch2 == '-') {
+                    int r6 = c1 - c3;
+                    System.out.println("Вывод: " + r6);
+                }
             }
         } else {
             System.out.println("Ошибка");
