@@ -20,7 +20,7 @@ public class TaskHome16 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите линейное уровнение в формате x+-b=с" +
-                "\n" + "a,b,c - целые числа от 0 до 9" +
+                "\n" + "x,b,c - целые числа от 0 до 9" +
                 "\nx - неизвестное." +
                 "\nНапример: х+3=7");
         String eq = in.nextLine();
