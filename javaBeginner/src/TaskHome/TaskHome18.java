@@ -83,7 +83,7 @@ public class TaskHome18 {
                             if (result3 == true) {
                                 System.out.println("Правильно!");
                             } else {
-                                //System.out.println("Обидно, приходи в другой раз!:(");
+                                System.out.println("Обидно, приходи в другой раз!:(");
                             }
                         }
                     } else {
