@@ -41,18 +41,6 @@ public class TaskHome18_1 {
                 }
             }
         }
-//        else{
-//            System.out.println("Первая попытка \nВведите ответ:");
-//            String Answer = in.nextLine();
-//            boolean result = correctAnswer.equalsIgnoreCase(Answer);
-//            if (result == true) {
-//                System.out.println("Правильно!");
-//                break;
-//            } else {
-//                System.out.println("Не правильно!");
-//            }
-//        }
-        //  }
         System.out.println("Конец");
     }
 
